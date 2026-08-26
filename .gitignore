@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large dataset files
+data/images.p
+Emotion .rar
+
+# Optional dataset images
+Emotion/
