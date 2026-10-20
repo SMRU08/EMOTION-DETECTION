@@ -1,15 +1,21 @@
-# Python
 __pycache__/
-*.pyc
+*.py[cod]
+.venv/
 venv/
 env/
-
-# Jupyter
 .ipynb_checkpoints/
-
-# Large dataset files
+.DS_Store
+Thumbs.db
+.vercel/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tmp/
+.pip-cache/
 data/images.p
 Emotion .rar
-
-# Optional dataset images
 Emotion/
+.npm-cache/
