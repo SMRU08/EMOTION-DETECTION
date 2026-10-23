@@ -1,7 +1,19 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "app.py": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "includeFiles": [
+        "Emotion_detection_model_new.tflite",
+        "haarcascade_frontalface_default.xml",
+        "public/**"
+      ]
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/app.py"
+    }
+  ]
 }

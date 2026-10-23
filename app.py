@@ -102,4 +102,5 @@ async def predict(image: UploadFile = File(...)):
     }
 
 
-app.mount("/", StaticFiles(directory=PUBLIC_PATH, html=True), name="frontend")
+if PUBLIC_PATH.is_dir():
+    app.mount("/", StaticFiles(directory=PUBLIC_PATH, html=True), name="frontend")
