@@ -6,6 +6,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 ROOT = Path(__file__).resolve().parent
@@ -41,6 +42,14 @@ def get_face_detector():
     if detector.empty():
         raise RuntimeError("The face detector file could not be loaded.")
     return detector
+
+
+@app.get("/", include_in_schema=False)
+def index():
+    index_file = PUBLIC_PATH / "index.html"
+    if index_file.is_file():
+        return FileResponse(index_file)
+    return {"status": "ok", "message": "Mood Lens API is running."}
 
 
 @app.get("/api/health")
