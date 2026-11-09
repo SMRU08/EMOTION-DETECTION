@@ -50,7 +50,7 @@ Interactive API documentation is available at `/docs` when the application is ru
 
 1. Push this repository to GitHub.
 2. In Vercel, import the GitHub repository and set the **Root Directory** to the directory containing `app.py` and `vercel.json` (the repository root for this project).
-3. Keep the framework preset on **Other** or allow Vercel to detect the Python FastAPI application. The entry point is `app.py`; dependencies are listed in `requirements.txt`.
+3. Keep the framework preset on **Other** or allow Vercel to detect the Python FastAPI application. The serverless entry point is `api/index.py`; dependencies are listed in `requirements.txt`.
 4. Deploy, then check `/api/health` and the site homepage.
 
 `vercel.json` configures a 60-second function limit. Vercel runs the app with the Linux LiteRT dependency; `requirements-dev.txt` is for local Windows development. If a previous deployment returns `404: NOT_FOUND`, check that the deployment uses the correct Git repository, production branch, and root directory, then redeploy the latest commit.
@@ -72,7 +72,8 @@ The conversion script compares TFLite and Keras predictions on a deterministic s
 ## Repository layout
 
 ```text
-app.py                                FastAPI application and prediction API
+api/index.py                          Vercel serverless FastAPI entrypoint
+app.py                                Local FastAPI application runner
 public/index.html                     Browser interface
 Emotion_detection_model_new.tflite   Runtime model
 haarcascade_frontalface_default.xml   Face detector
