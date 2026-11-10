@@ -4,12 +4,7 @@
   "functions": {
     "api/index.py": {
       "maxDuration": 60,
-      "includeFiles": [
-        "Emotion_detection_model_new.tflite",
-        "haarcascade_frontalface_default.xml",
-        "public/**",
-        "app.py"
-      ]
+      "includeFiles": "{Emotion_detection_model_new.tflite,haarcascade_frontalface_default.xml,public/**,app.py}"
     }
   },
   "rewrites": [
